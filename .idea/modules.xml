@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/MekvahanDelivery.iml" filepath="$PROJECT_DIR$/.idea/MekvahanDelivery.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mekvahan-delivery.iml" filepath="$PROJECT_DIR$/mekvahan-delivery.iml" />
     </modules>
   </component>
 </project>
