@@ -217,13 +217,13 @@ public class NavActivity extends AppCompatActivity implements NavigationView.OnN
 
         List<MenuModel> childModelsList = new ArrayList<>();
 
-        MenuModel menuModel = new MenuModel(0,"Home",false,true,R.drawable.ic_home_black_24dp);
+        MenuModel menuModel = new MenuModel(1,"Home",false,true,R.drawable.ic_home_black_24dp);
         headerList.add(menuModel);
         if (!menuModel.isHasChildren()) {
             childList.put(menuModel, null);
         }
 
-        menuModel = new MenuModel(0,"Profile",false,true,R.drawable.ic_account_circle_black_24dp);
+        menuModel = new MenuModel(2,"Profile",false,true,R.drawable.ic_account_circle_black_24dp);
         headerList.add(menuModel);
         if (!menuModel.isHasChildren()) {
             childList.put(menuModel, null);
@@ -247,21 +247,32 @@ public class NavActivity extends AppCompatActivity implements NavigationView.OnN
             childList.put(menuModel, null);
         }
 
-        menuModel = new MenuModel(4,"Notifications",false,true,R.drawable.ic_notification);
+        menuModel = new MenuModel(5,"Notifications",false,true,R.drawable.ic_notification);
+        headerList.add(menuModel);
+        if (!menuModel.isHasChildren()) {
+            childList.put(menuModel, null);
+        }
+
+        menuModel = new MenuModel(6,"About Us",false,true,R.drawable.ic_about_us);
+        headerList.add(menuModel);
+        if (!menuModel.isHasChildren()) {
+            childList.put(menuModel, null);
+        }
+
+        menuModel = new MenuModel(7,"Support",false,true,R.drawable.ic_help);
         headerList.add(menuModel);
         if (!menuModel.isHasChildren()) {
             childList.put(menuModel, null);
         }
 
 
-        menuModel = new MenuModel(4,"About Us",false,true,R.drawable.ic_about_us);
+        menuModel = new MenuModel(8,"",false,false, 0);  //Blank Space
         headerList.add(menuModel);
         if (!menuModel.isHasChildren()) {
             childList.put(menuModel, null);
         }
 
-
-        menuModel = new MenuModel(6,"Support",false,true,R.drawable.ic_help);
+        menuModel = new MenuModel(9,"Logout",false,true,R.drawable.ic_logout);
         headerList.add(menuModel);
         if (!menuModel.isHasChildren()) {
             childList.put(menuModel, null);
@@ -276,13 +287,13 @@ public class NavActivity extends AppCompatActivity implements NavigationView.OnN
         ViewGroup footerView = (ViewGroup) getLayoutInflater().inflate(R.layout.home_page_expandable_view_footer, expandableListView, false);
         expandableListView.addFooterView(footerView);
 
-        footerView.findViewById(R.id.footer_logout).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+//        footerView.findViewById(R.id.footer_logout).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
 //                mSession.logoutUser();
-                finishAffinity();
-            }
-        });
+//                finishAffinity();
+//            }
+//        });
 
 
         expandableListView.setAdapter(expandableListAdapter);
@@ -298,23 +309,22 @@ public class NavActivity extends AppCompatActivity implements NavigationView.OnN
 
                     if (!menuModel.isHasChildren()) {
                         switch (id_int){
-                            case 0: //startActivity(new Intent(AppHomePage.this, ProfilePage.class));
-                            break;
                             case 1: //startActivity(new Intent(AppHomePage.this, MyVehicleHomePage.class));
-                            break;
+                                break;
                             case 2: //startActivity(new Intent(AppHomePage.this, MyAddressHomePage.class));
-                            break;
+                                break;
                             case 3: //startActivity(new Intent(AppHomePage.this,MekCoinsWallet.class));break;
                                 break;
                             case 4: break;
                             case 5: break;
                             case 6: break;
                             case 7: //startActivity(new Intent(AppHomePage.this, RefarralsHomePage.class));
-                            break;
+                                break;
                             case 8: //startActivity(new Intent(AppHomePage.this, OffersHomePage.class));
-                            break;
+                                break;
                             case 9: //startActivity(new Intent(AppHomePage.this, AboutUsPage.class));
-                            break;
+                                finish();
+                                break;
                         }
                         onBackPressed();
                     }

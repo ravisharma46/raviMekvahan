@@ -1,32 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".NavActivity"
+    android:orientation="vertical"
     tools:showIn="@layout/home_page_bar">
 
-        <LinearLayout
-            android:id="@+id/main_frame_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+    <LinearLayout
+        android:id="@+id/sky_icon_RL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="10dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:src="@drawable/asset_19xhdpi" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        >
+        <TextView
+            android:id="@+id/not_service_txtV"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Look like you haven't any services yet!"
             android:gravity="center"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:gravity="center"
-                android:layout_height="wrap_content"
-                android:text="@string/menu_home"
-                android:textSize="16sp"/>
-            <TextView
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/app_name"
-                android:textSize="16sp"/>
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="6dp"
+            />
 
-        </LinearLayout>
+        <Button
+            android:layout_width="110dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/not_service_txtV"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:textColor="#ffff"
+            android:textAllCaps="false"
+            android:layout_marginLeft="8dp"
+            android:layout_gravity="center"
+            android:background="@drawable/custom_btn"
+            android:text="@string/msg_txtV" />
 
-</FrameLayout>
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp">
+
+        <RelativeLayout
+            android:id="@+id/LL_car_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="30dp">
+
+
+
+            <ImageView
+                android:id="@+id/grass_img"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-20dp"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/asset_20xhdpi"
+
+                />
+
+            <ImageView
+                android:id="@+id/car_img"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_marginLeft="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@id/grass_img"
+                android:src="@drawable/asset_22mdpi" />
+
+            <ImageView
+                android:id="@+id/home_img"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="-20dp"
+                android:layout_marginBottom="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@+id/car_img"
+                android:src="@drawable/asset_23xhdpi" />
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/asset_21ldpi"
+                android:layout_alignParentBottom="true"
+                android:scaleX="2.5" />
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+</LinearLayout>
