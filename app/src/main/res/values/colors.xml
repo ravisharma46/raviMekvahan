@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+
+    <!--login page-->
+    <color name="mek_grey">#494949</color>
+    <color name="mek_red">#DC0A16</color>
+    <color name="light_grey">#8c8c8c</color>
+    <color name="line_colour">#E0E0E0</color>
+
+    <!--home page-->
+    <color name="offwhite">#8e8e8e</color>
+</resources>
