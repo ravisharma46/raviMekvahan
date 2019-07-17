@@ -36,16 +36,13 @@ public class SplashActivity extends AppCompatActivity {
                 Intent intent = new Intent(SplashActivity.this, OnBoardingActivity.class);
                 startActivity(intent);
 
-
             }
             else{
                 Intent intent = new Intent(SplashActivity.this, NavActivity.class);
                 startActivity(intent);
             }
 
-
-
-
+           finish();
         }, SPLASH_DISPLAY_LENGTH);
 
 
