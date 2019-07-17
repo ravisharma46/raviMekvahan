@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -29,6 +30,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.naruto.mekvahandelivery.Adapter.ExpandableListAdapter;
+import com.naruto.mekvahandelivery.Adapter.ViewPagerAdapter;
+import com.naruto.mekvahandelivery.CommonFiles.LoginSessionManager;
 import com.naruto.mekvahandelivery.history.BookingHistoryFragment;
 import com.naruto.mekvahandelivery.OngoingOrders.OngoingFragment;
 import com.naruto.mekvahandelivery.UpcomingOrders.UpcomingFragment;
@@ -41,7 +44,8 @@ import java.util.List;
 public class NavActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private final String TAG = this.getClass().getSimpleName();
-
+    private LoginSessionManager mSession;
+    HashMap<String, String> mUserInfo;
 
     ExpandableListAdapter expandableListAdapter;
     ExpandableListView expandableListView;
@@ -69,7 +73,17 @@ public class NavActivity extends AppCompatActivity implements NavigationView.OnN
 
 
 
-     setContentView(R.layout.home_page);
+        mSession  = new LoginSessionManager(getApplicationContext());
+        mUserInfo = mSession.getUserDetailsFromSP();
+
+        if (!mSession.isLoggedIn()) {
+            mSession.checkLogin();
+            finish();
+            return;
+        }
+
+
+        setContentView(R.layout.home_page);
         Log.e(TAG,"Login successfully");
 
          setNavigationDrawer();
@@ -202,16 +216,16 @@ public class NavActivity extends AppCompatActivity implements NavigationView.OnN
         View headerView      =  navigationView.getHeaderView(0);
 
         ImageView iv_profile =  headerView.findViewById(R.id.profile_pic);
-//        TextView tv_name     =  headerView.findViewById(R.id.name);
-//        TextView tv_mobile   =  headerView.findViewById(R.id.mobile);
+        TextView tv_name     =  headerView.findViewById(R.id.name);
+        TextView tv_mobile   =  headerView.findViewById(R.id.mobile);
 
         // need to set a profile pic -
         iv_profile.setOnClickListener(v -> {
             //startActivity(new Intent(AppHomePage.this,Profile.class));
             drawer.closeDrawer(GravityCompat.START);
         });
-//        tv_name.setText(mUserInfo.get(LoginSessionManager.NAME));
-//        tv_mobile.setText(mUserInfo.get(LoginSessionManager.MOBILE));
+        tv_name.setText(mUserInfo.get(LoginSessionManager.NAME));
+        tv_mobile.setText(mUserInfo.get(LoginSessionManager.MOBILE));
 
     }
 
@@ -290,7 +304,6 @@ public class NavActivity extends AppCompatActivity implements NavigationView.OnN
         expandableListView.addFooterView(footerView);
 
 
-
         expandableListView.setAdapter(expandableListAdapter);
 
         expandableListView.setOnGroupClickListener((parent, v, groupPosition, id) -> {
@@ -326,6 +339,7 @@ public class NavActivity extends AppCompatActivity implements NavigationView.OnN
                         case 7: //startActivity(new Intent(AppHomePage.this, OffersHomePage.class));
                             break;
                         case 8: //startActivity(new Intent(AppHomePage.this, AboutUsPage.class));
+                            mSession.logoutUser();
                             finish();
                             break;
                     }
