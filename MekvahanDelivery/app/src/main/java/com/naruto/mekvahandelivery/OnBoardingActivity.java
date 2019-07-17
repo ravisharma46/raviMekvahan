@@ -49,6 +49,7 @@ public class OnBoardingActivity extends AppCompatActivity {
         startbtn.setOnClickListener(this::onClick);
 
         skip.setOnClickListener(view -> {
+
             startApp();
         });
 
