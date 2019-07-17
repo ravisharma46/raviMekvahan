@@ -77,8 +77,9 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         finish();
+
+
     }
 
     public void userLogin() {
@@ -120,6 +121,7 @@ public class LoginActivity extends AppCompatActivity {
                        name,mobile,email,type,latitude,longitude,partner_id,active );
 
                         Intent intent = new Intent(LoginActivity.this, NavActivity.class);
+                        finish();
                         startActivity(intent);
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -146,7 +148,7 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
-               
+
                 return super.getHeaders();
             }
         };
