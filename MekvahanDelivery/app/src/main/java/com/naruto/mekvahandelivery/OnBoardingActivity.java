@@ -40,6 +40,7 @@ public class OnBoardingActivity extends AppCompatActivity {
         sliderDotspanel = findViewById(R.id.ll_dots);
 
 
+
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this);
 
         viewPager.setAdapter(viewPagerAdapter);
