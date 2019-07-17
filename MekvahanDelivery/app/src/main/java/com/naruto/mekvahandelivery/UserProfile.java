@@ -10,6 +10,8 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.location.Address;
+import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
@@ -40,13 +42,19 @@ import com.naruto.mekvahandelivery.user_profile.ShowAccountDetails;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 import static android.accounts.AccountManager.KEY_PASSWORD;
 import static com.naruto.mekvahandelivery.CommonFiles.LoginSessionManager.EMAIL;
+import static com.naruto.mekvahandelivery.CommonFiles.LoginSessionManager.LATITUDE;
+import static com.naruto.mekvahandelivery.CommonFiles.LoginSessionManager.LONGITUDE;
 import static com.naruto.mekvahandelivery.CommonFiles.LoginSessionManager.MOBILE;
 import static com.naruto.mekvahandelivery.CommonFiles.LoginSessionManager.NAME;
 import static com.naruto.mekvahandelivery.CommonFiles.LoginSessionManager.PROFILE_ID;
@@ -108,6 +116,7 @@ public class UserProfile extends AppCompatActivity {
         email.setText(userInfo.get(EMAIL));
         partnerType.setText(userInfo.get(TYPE));
         executive_id.setText(userInfo.get(PROFILE_ID));
+
 
 
 
@@ -263,6 +272,9 @@ public class UserProfile extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+
 
 
 }
