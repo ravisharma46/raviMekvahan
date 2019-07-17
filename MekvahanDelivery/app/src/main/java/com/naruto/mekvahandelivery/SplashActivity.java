@@ -8,9 +8,12 @@ import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.naruto.mekvahandelivery.CommonFiles.LoginSessionManager;
+
 public class SplashActivity extends AppCompatActivity {
 
 
+    private LoginSessionManager mSession;
     private final int SPLASH_DISPLAY_LENGTH = 1000;
 
 
@@ -18,6 +21,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        mSession=new LoginSessionManager(getApplicationContext());
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash);
@@ -25,10 +29,27 @@ public class SplashActivity extends AppCompatActivity {
         Handler handler = new Handler();
 
         handler.postDelayed(() -> {
-            Intent intent = new Intent(SplashActivity.this, OnBoardingActivity.class);
+
+
+            if (!mSession.isLoggedIn()) {
+                mSession.checkLogin();
+                Intent intent = new Intent(SplashActivity.this, OnBoardingActivity.class);
                 startActivity(intent);
-                finish();
+
+
+            }
+            else{
+                Intent intent = new Intent(SplashActivity.this, NavActivity.class);
+                startActivity(intent);
+            }
+
+
+
+
         }, SPLASH_DISPLAY_LENGTH);
+
+
+
     }
 
     @Override
