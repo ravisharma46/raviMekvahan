@@ -163,6 +163,7 @@ public class NavActivity extends AppCompatActivity implements NavigationView.OnN
 //                        toolbar.setTitle("Cart");
 //                        return true;
                     case R.id.navigation_walet:
+                        startActivity(new Intent(NavActivity.this, OrderHistory.class));
                         // toolbar.setTitle("Profile");
                         return true;
                     case R.id.navigation_profile:
@@ -173,7 +174,7 @@ public class NavActivity extends AppCompatActivity implements NavigationView.OnN
                 return false;
             };
 
-
+//
 
 
 
@@ -450,9 +451,10 @@ public class NavActivity extends AppCompatActivity implements NavigationView.OnN
         handler.postDelayed(() -> {
             Intent intent = new Intent(NavActivity.this, activity.getClass());
             startActivity(intent);
-            finish();
+
         }, 250);
     }
+
 
 
 
