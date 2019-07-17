@@ -35,9 +35,9 @@
                         android:layout_weight="1"
                         android:background="#A5A5A5"
                         android:fontFamily="@font/gotham_book"
-                        android:paddingTop="8dp"
+                        android:paddingTop="10dp"
                         android:textSize="10sp"
-                        android:paddingBottom="8dp"
+                        android:paddingBottom="10dp"
                         android:paddingLeft="16dp"
                         android:text="28th July, 2018"
                         android:textColor="#ffffff" />
@@ -51,8 +51,8 @@
                         android:background="#A5A5A5"
                         android:fontFamily="@font/gotham_book"
                         android:gravity="right"
-                        android:paddingTop="8dp"
-                        android:paddingBottom="8dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
                         android:paddingRight="16dp"
                         android:text="10:30 a.m"
                         android:textColor="#ffffff" />
