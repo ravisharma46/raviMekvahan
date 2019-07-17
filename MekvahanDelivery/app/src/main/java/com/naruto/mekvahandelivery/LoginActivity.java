@@ -121,8 +121,10 @@ public class LoginActivity extends AppCompatActivity {
                        name,mobile,email,type,latitude,longitude,partner_id,active );
 
                         Intent intent = new Intent(LoginActivity.this, NavActivity.class);
-                        finish();
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
+                        finish();
+
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
