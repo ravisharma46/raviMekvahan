@@ -142,7 +142,7 @@ public class UserProfile extends AppCompatActivity {
         });
 
 
-        bt_done.setOnClickListener(view -> finish());
+        bt_done.setOnClickListener(view -> onBackPressed());
 
 
 
@@ -257,16 +257,13 @@ public class UserProfile extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         if (item.getItemId() == android.R.id.home) {
-            finish();
+            onBackPressed();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onBackPressed() {
-        finish();
-    }
+
 }
 
