@@ -49,7 +49,6 @@
             android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity
             android:name=".LoginActivity"
-            android:noHistory="true"
             android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity
             android:name=".OnBoardingActivity"
