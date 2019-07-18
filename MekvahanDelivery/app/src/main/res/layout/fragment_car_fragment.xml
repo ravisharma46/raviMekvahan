@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".customer_report.car_fragment">
+    tools:context=".customer_report.Car_Add_fragment">
 
     <LinearLayout
         android:layout_width="match_parent"
