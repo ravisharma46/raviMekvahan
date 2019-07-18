@@ -20,6 +20,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity android:name=".customer_report.ViewCustomerReport"></activity>
         <activity android:name=".ScanQrcode" />
         <activity android:name=".UserProfile" />
         <activity
@@ -27,7 +28,7 @@
             android:label="Account details" />
         <activity android:name=".customer_pickup.OnGoingBookingVendorDrop" />
         <activity android:name=".customer_pickup.UpcomingBookingCustomer" />
-        <activity android:name=".customer_report.CustomerReport" />
+        <activity android:name=".customer_report.AddCustomerReport" />
         <activity android:name=".transaction_history.Transaction" />
         <activity android:name=".transaction_history.OrderHistory" />
         <activity android:name=".vendor_pickup.OngoingBookingCustomerDrop" />
