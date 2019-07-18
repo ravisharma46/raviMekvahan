@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="bottom|center_horizontal">
+
+        <ImageView
+            android:contentDescription="slider"
+            android:id="@+id/im_slider"
+            android:layout_width="200dp"
+            android:layout_height="200dp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:layout_weight="1"
+        >
+        <TextView
+            android:id="@+id/titles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/im_slider"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:padding="10dp"
+            android:maxLines="2"
+            android:gravity="center"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:singleLine="false"
+            android:text="Smartest way of Care \n kwd jdwdjnkn" />
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titles"
+            android:padding="10dp"
+            android:maxLines="2"
+            android:gravity="center"
+            android:fontFamily="@font/montserrat_semi_bold"
+
+            android:singleLine="false"
+
+            />
+    </LinearLayout>
+
+</LinearLayout>
