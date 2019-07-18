@@ -93,6 +93,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:elevation="4dp"
+                    android:id="@+id/chaufer"
                     android:src="@drawable/fb_car"
                     android:layout_gravity="bottom|center"
                     style="?android:attr/imageButtonStyle"
