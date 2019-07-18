@@ -9,7 +9,6 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,9 +24,7 @@ import androidx.fragment.app.FragmentManager;
 import com.naruto.mekvahandelivery.R;
 import com.naruto.mekvahandelivery.signature.SignatureActivity;
 
-import java.security.Signature;
-
-public class CustomerReport extends AppCompatActivity {
+public class AddCustomerReport extends AppCompatActivity {
     private FrameLayout car, bike;
     private ImageView car_image, bike_image,img_sign;
     private TextView tvbike, tvcar, document;
@@ -37,7 +34,7 @@ public class CustomerReport extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_customer_report);
+        setContentView(R.layout.activity_add_customer_report);
 
 
         try{
@@ -92,7 +89,7 @@ public class CustomerReport extends AppCompatActivity {
         take_sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                  Intent i=new Intent(CustomerReport.this, SignatureActivity.class);
+                  Intent i=new Intent(AddCustomerReport.this, SignatureActivity.class);
                   startActivity(i);
 
             }
@@ -126,7 +123,7 @@ public class CustomerReport extends AppCompatActivity {
 
 
     private void loadCarFragment() {
-        car_fragment c_Fragment = new car_fragment();
+        Car_Add_fragment c_Fragment = new Car_Add_fragment();
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction().replace(R.id.frameLayout,
                 c_Fragment,
@@ -134,7 +131,7 @@ public class CustomerReport extends AppCompatActivity {
     }
 
     private void loadBikeFragment() {
-        bike_fragment b_Fragment = new bike_fragment();
+        Bike_Add_fragment b_Fragment = new Bike_Add_fragment();
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction().replace(R.id.frameLayout,
                 b_Fragment,

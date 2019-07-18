@@ -15,13 +15,13 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:fontFamily="@font/montserrat_medium1"
             android:paddingLeft="16dp"
-            android:paddingTop="8dp"
+           android:gravity="center"
             android:paddingRight="16dp"
-            android:paddingBottom="8dp"
-            android:text="Awaiting Pickup"
+
+            android:text="Awaiting customer pickup"
             android:textColor="@color/white"
             android:textSize="14sp" />
 

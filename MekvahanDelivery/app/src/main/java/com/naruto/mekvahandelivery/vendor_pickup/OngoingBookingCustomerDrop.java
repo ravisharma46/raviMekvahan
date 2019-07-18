@@ -14,7 +14,8 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.naruto.mekvahandelivery.R;
-import com.naruto.mekvahandelivery.customer_report.CustomerReport;
+import com.naruto.mekvahandelivery.customer_report.AddCustomerReport;
+import com.naruto.mekvahandelivery.customer_report.ViewCustomerReport;
 
 public class OngoingBookingCustomerDrop extends AppCompatActivity {
 
@@ -36,7 +37,7 @@ public class OngoingBookingCustomerDrop extends AppCompatActivity {
         btadd_report.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(OngoingBookingCustomerDrop.this, CustomerReport.class));
+                startActivity(new Intent(OngoingBookingCustomerDrop.this, ViewCustomerReport.class));
             }
         });
 

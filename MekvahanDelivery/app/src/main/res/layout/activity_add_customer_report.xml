@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".customer_report.CustomerReport">
+    tools:context=".customer_report.AddCustomerReport">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -579,13 +579,14 @@
                     android:layout_gravity="left"
                     android:fontFamily="@font/montserrat_medium1"
                     android:padding="16dp"
-                    android:text="vehicle picture"
+                    android:text="vehicle interior picture"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
 
 
                 <FrameLayout
                     android:layout_width="wrap_content"
+                    android:id="@+id/Fmcamera"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right">
 
@@ -904,6 +905,7 @@
 
                     <EditText
                         android:layout_width="match_parent"
+                        android:id="@+id/etodometer"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:layout_marginLeft="16dp"
@@ -964,6 +966,7 @@
 
                     <FrameLayout
                         android:layout_width="wrap_content"
+                        android:id="@+id/fmsignature"
                         android:layout_height="match_parent"
                         android:layout_weight="1">
 
@@ -985,6 +988,7 @@
 
                     <FrameLayout
                         android:layout_width="2dp"
+                        android:id="@+id/fmview"
                         android:layout_height="match_parent"
                         android:layout_weight="1">
 
@@ -1014,6 +1018,7 @@
 
                             <ImageView
                                 android:layout_width="wrap_content"
+                                android:id="@+id/image_cross"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="right"
                                 android:layout_margin="4dp"

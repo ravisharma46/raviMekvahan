@@ -17,8 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.naruto.mekvahandelivery.R;
 import com.naruto.mekvahandelivery.ScanQrcode;
-import com.naruto.mekvahandelivery.customer_pickup.UpcomingBookingCustomer;
-import com.naruto.mekvahandelivery.customer_report.CustomerReport;
+import com.naruto.mekvahandelivery.customer_report.AddCustomerReport;
 
 public class UpcomingBookingVendor extends AppCompatActivity {
 
@@ -54,7 +53,7 @@ public class UpcomingBookingVendor extends AppCompatActivity {
         report.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(UpcomingBookingVendor.this, CustomerReport.class));
+                startActivity(new Intent(UpcomingBookingVendor.this, AddCustomerReport.class));
             }
         });
 
