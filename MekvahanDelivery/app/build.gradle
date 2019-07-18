@@ -3,7 +3,8 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.0"
-    defaultConfig {        applicationId "com.naruto.mekvahandelivery"
+    defaultConfig {
+        applicationId "com.naruto.mekvahandelivery"
         minSdkVersion 23
         targetSdkVersion 29
         versionCode 1
