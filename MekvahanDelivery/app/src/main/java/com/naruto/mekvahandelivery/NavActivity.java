@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -31,6 +32,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.naruto.mekvahandelivery.Adapter.ExpandableListAdapter;
 import com.naruto.mekvahandelivery.Adapter.ViewPagerAdapter;
+import com.naruto.mekvahandelivery.Chauffeur_Partner.Chauffer;
 import com.naruto.mekvahandelivery.CommonFiles.LoginSessionManager;
 import com.naruto.mekvahandelivery.history.BookingHistoryFragment;
 import com.naruto.mekvahandelivery.OngoingOrders.OngoingFragment;
@@ -59,12 +61,16 @@ public class NavActivity extends AppCompatActivity implements NavigationView.OnN
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private ActionBar toolbar;
+    private ImageView chaufer;
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
 
         mFragmentList = new ArrayList<>();
         mFragmentList.add(new UpcomingFragment());
@@ -86,11 +92,24 @@ public class NavActivity extends AppCompatActivity implements NavigationView.OnN
         setContentView(R.layout.home_page);
         Log.e(TAG,"Login successfully");
 
+
+        chaufer=(ImageView) findViewById(R.id.chaufer);
+        chaufer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(NavActivity.this, Chauffer.class));
+            }
+        });
+
          setNavigationDrawer();
 
          setBottomNavigation();
 
         setTabLayout();
+
+
+
+
     }
 
 
@@ -159,9 +178,9 @@ public class NavActivity extends AppCompatActivity implements NavigationView.OnN
                     case R.id.navigation_location:
                         //toolbar.setTitle("My Gifts");
                         return true;
-//                    case R.id.navigation_sm:
-//                        toolbar.setTitle("Cart");
-//                        return true;
+                   // case R.id.navigation_sm:
+
+                     //  return true;
                     case R.id.navigation_walet:
                         startActivity(new Intent(NavActivity.this, OrderHistory.class));
                         // toolbar.setTitle("Profile");
