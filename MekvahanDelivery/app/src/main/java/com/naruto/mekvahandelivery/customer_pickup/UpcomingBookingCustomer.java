@@ -19,7 +19,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.naruto.mekvahandelivery.R;
-import com.naruto.mekvahandelivery.customer_report.CustomerReport;
+import com.naruto.mekvahandelivery.customer_report.AddCustomerReport;
 
 public class UpcomingBookingCustomer extends AppCompatActivity {
     private LinearLayout paint_linear;
@@ -77,7 +77,7 @@ public class UpcomingBookingCustomer extends AppCompatActivity {
         report.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(UpcomingBookingCustomer.this, CustomerReport.class));
+                startActivity(new Intent(UpcomingBookingCustomer.this, AddCustomerReport.class));
             }
         });
 
