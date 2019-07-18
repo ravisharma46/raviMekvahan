@@ -20,7 +20,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".customer_report.ViewCustomerReport"></activity>
+        <activity android:name=".Chauffeur_Partner.NewBooking.NewBookingOrderView"></activity>
+        <activity android:name=".Chauffeur_Partner.Chauffer" />
+        <activity android:name=".customer_report.ViewCustomerReport" />
         <activity android:name=".ScanQrcode" />
         <activity android:name=".UserProfile" />
         <activity
