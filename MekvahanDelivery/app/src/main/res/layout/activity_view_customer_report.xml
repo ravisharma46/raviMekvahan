@@ -915,9 +915,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="144dp"
-                    android:layout_marginBottom="8dp"
-                    android:padding="8dp"
+                    android:layout_height="wrap_content"
                    >
 
 
@@ -925,15 +923,18 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="16dp"
                             android:background="@drawable/frame_sqr">
 
 
 
                             <ImageView
-                                android:layout_width="80dp"
+                                android:layout_width="match_parent"
                                 android:id="@+id/image_sign"
-                                android:layout_height="80dp"
-                                android:layout_gravity="center"
+                                android:layout_height="wrap_content"
                                 android:background="@drawable/image_svg" />
 
                         </FrameLayout>
