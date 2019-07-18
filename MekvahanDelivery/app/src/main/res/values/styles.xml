@@ -32,7 +32,7 @@
     </style>
     <style name="Theme.AppLib.ActionBar.TitleTextStyle" parent="">
         <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
 
