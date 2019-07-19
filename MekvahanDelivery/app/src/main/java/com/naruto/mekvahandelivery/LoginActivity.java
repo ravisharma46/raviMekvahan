@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +23,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.naruto.mekvahandelivery.CommonFiles.LoginSessionManager;
 import com.naruto.mekvahandelivery.CommonFiles.MySingleton;
+import com.naruto.mekvahandelivery.FeedbackPage.Feedback_page;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -36,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
     private static final String myUrl = "https://mekvahan.com/api/delivery/deliveryBoy";
 
     private ImageView iv_bg;
-
+    private TextView tvfeedback;
 
     private LoginSessionManager mSession;
     private String  tokenType,accessToken,profile_id,name,mobile,email,type,latitude,longitude,partner_id,active;
@@ -47,6 +49,14 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         iv_bg = findViewById(R.id.bg_img);
+        tvfeedback=findViewById(R.id.btv_feedback);
+
+        tvfeedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, Feedback_page.class));
+            }
+        });
 
 
 
