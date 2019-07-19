@@ -1,6 +1,7 @@
 package com.naruto.mekvahandelivery.customer_pickup;
 
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -9,6 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -19,12 +21,13 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.naruto.mekvahandelivery.R;
+import static com.naruto.mekvahandelivery.CommonFiles.CommonVaribalesFunctions.pickupConfirm;
 import com.naruto.mekvahandelivery.customer_report.AddCustomerReport;
 
 public class UpcomingBookingCustomer extends AppCompatActivity {
     private LinearLayout paint_linear;
     private TextView tvDetails;
-    private Button report;
+    private Button report,confirm_booking;
     private ImageView call;
 
 
@@ -37,6 +40,7 @@ public class UpcomingBookingCustomer extends AppCompatActivity {
         tvDetails = findViewById(R.id.tvDetails);
         report = findViewById(R.id.tvcustomer_report);
         call = findViewById(R.id.call);
+        confirm_booking=findViewById(R.id.bt_confirm);
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -81,9 +85,41 @@ public class UpcomingBookingCustomer extends AppCompatActivity {
             }
         });
 
+        confirm_booking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               pickupConfirm(UpcomingBookingCustomer.this);
+            }
+        });
+
 
 
     }
+
+
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
+
+
+
 
 }
 
