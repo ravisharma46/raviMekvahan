@@ -2,6 +2,7 @@ package com.naruto.mekvahandelivery.CommonFiles;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -10,10 +11,15 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
+
+import com.naruto.mekvahandelivery.R;
+import com.naruto.mekvahandelivery.customer_pickup.UpcomingBookingCustomer;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -178,5 +184,22 @@ public class CommonVaribalesFunctions {
 
 
     }
+
+    public static void pickupConfirm(Context context){
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
+        View dialogView = inflater.inflate(R.layout.dialog_pickup_confirmed, null);
+
+        // Specify alert dialog is not cancelable/not ignorable
+        builder.setCancelable(true);
+
+        // Set the custom layout as alert dialog view
+        builder.setView(dialogView);
+        final AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+
 
 }
