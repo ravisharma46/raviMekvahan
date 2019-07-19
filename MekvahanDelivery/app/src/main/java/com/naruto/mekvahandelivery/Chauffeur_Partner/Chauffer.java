@@ -58,7 +58,7 @@ public class Chauffer extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         NavActivity.ViewPagerAdapter adapter = new NavActivity.ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new NewBookingFragment(), "New Booking");
+        adapter.addFragment(new NewBookingFragment(), "New");
         adapter.addFragment(new UpcomingFragment(), "Upcoming");
         adapter.addFragment(new OngoingFragment(), "Ongoing");
         adapter.addFragment(new BookingHistoryFragment(), "History");
