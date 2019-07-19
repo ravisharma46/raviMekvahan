@@ -30,6 +30,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
+import com.naruto.mekvahandelivery.AboutUs.AboutUs;
 import com.naruto.mekvahandelivery.Adapter.ExpandableListAdapter;
 import com.naruto.mekvahandelivery.Adapter.ViewPagerAdapter;
 import com.naruto.mekvahandelivery.Chauffeur_Partner.Chauffer;
@@ -353,8 +354,10 @@ public class NavActivity extends AppCompatActivity implements NavigationView.OnN
                         case 4:
                             break;
                         case 5:
+                            delay(new AboutUs());
                             break;
-                        case 6: //startActivity(new Intent(AppHomePage.this, RefarralsHomePage.class));
+                        case 6:
+
                             break;
                         case 7: //startActivity(new Intent(AppHomePage.this, OffersHomePage.class));
                             break;
