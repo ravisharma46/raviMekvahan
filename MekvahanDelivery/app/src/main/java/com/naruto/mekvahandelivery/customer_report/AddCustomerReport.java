@@ -26,9 +26,10 @@ import com.naruto.mekvahandelivery.signature.SignatureActivity;
 
 public class AddCustomerReport extends AppCompatActivity {
     private FrameLayout car, bike;
-    private ImageView car_image, bike_image,img_sign;
+    private ImageView car_image, bike_image,img_sign,img_cancel;
     private TextView tvbike, tvcar, document;
-    private Button take_sign;
+    private Button take_sign,rc,puc,insurance,road_tax,passengerTax,pollutionPaper;
+    private FrameLayout frame1;
 
 
     @Override
@@ -61,6 +62,18 @@ public class AddCustomerReport extends AppCompatActivity {
         document = findViewById(R.id.tvDocument);
         take_sign=findViewById(R.id.bt_sign);
         img_sign=findViewById(R.id.image_sign);
+        img_cancel=findViewById(R.id.image_cross);
+
+        rc=findViewById(R.id.bt_rc);
+        puc=findViewById(R.id.bt_puc);
+        insurance=findViewById(R.id.bt_insurance);
+        road_tax=findViewById(R.id.bt_roadtax);
+        passengerTax=findViewById(R.id.bt_passengertax);
+        pollutionPaper=findViewById(R.id.bt_pollutionpaper);
+
+
+
+
 
 
         loadCarFragment();
@@ -75,7 +88,6 @@ public class AddCustomerReport extends AppCompatActivity {
 
             }
         });
-
         bike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,15 +97,117 @@ public class AddCustomerReport extends AppCompatActivity {
 
             }
         });
-
         take_sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                   Intent i=new Intent(AddCustomerReport.this, SignatureActivity.class);
-                  startActivity(i);
+                  startActivityForResult(i,2);
 
             }
         });
+        img_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                img_sign.setImageResource(R.drawable.image_svg);
+            }
+        });
+
+
+        rc.setOnClickListener(new View.OnClickListener() {
+            int check = 1;
+            @Override
+            public void onClick(View view) {
+                if (check == 1) {
+                    rc.setBackgroundResource(R.drawable.customer_reprt_bt02);
+                    rc.setTextColor(Color.WHITE);
+                    check = 0;
+                } else {
+                    rc.setBackgroundResource(R.drawable.customer_rprt_bt01);
+                    rc.setTextColor(Color.BLACK);
+                    check = 1;
+                }
+            }
+        });
+        puc.setOnClickListener(new View.OnClickListener() {
+            int check = 1;
+            @Override
+            public void onClick(View view) {
+                if (check == 1) {
+                    puc.setBackgroundResource(R.drawable.customer_reprt_bt02);
+                    puc.setTextColor(Color.WHITE);
+                    check = 0;
+                } else {
+                    puc.setBackgroundResource(R.drawable.customer_rprt_bt01);
+                    puc.setTextColor(Color.BLACK);
+                    check = 1;
+                }
+            }
+        });
+        passengerTax.setOnClickListener(new View.OnClickListener() {
+            int check = 1;
+            @Override
+            public void onClick(View view) {
+                if (check == 1) {
+                    passengerTax.setBackgroundResource(R.drawable.customer_reprt_bt02);
+                    passengerTax.setTextColor(Color.WHITE);
+                    check = 0;
+                } else {
+                    passengerTax.setBackgroundResource(R.drawable.customer_rprt_bt01);
+                    passengerTax.setTextColor(Color.BLACK);
+                    check = 1;
+                }
+            }
+        });
+        insurance.setOnClickListener(new View.OnClickListener() {
+            int check = 1;
+            @Override
+            public void onClick(View view) {
+                if (check == 1) {
+                    insurance.setBackgroundResource(R.drawable.customer_reprt_bt02);
+                    insurance.setTextColor(Color.WHITE);
+                    check = 0;
+                } else {
+                    insurance.setBackgroundResource(R.drawable.customer_rprt_bt01);
+                    insurance.setTextColor(Color.BLACK);
+                    check = 1;
+                }
+            }
+        });
+        road_tax.setOnClickListener(new View.OnClickListener() {
+            int check = 1;
+            @Override
+            public void onClick(View view) {
+                if (check == 1) {
+                    road_tax.setBackgroundResource(R.drawable.customer_reprt_bt02);
+                    road_tax.setTextColor(Color.WHITE);
+                    check = 0;
+                } else {
+                    road_tax.setBackgroundResource(R.drawable.customer_rprt_bt01);
+                    road_tax.setTextColor(Color.BLACK);
+                    check = 1;
+                }
+            }
+        });
+        pollutionPaper.setOnClickListener(new View.OnClickListener() {
+            int check = 1;
+            @Override
+            public void onClick(View view) {
+                if (check == 1) {
+                    pollutionPaper.setBackgroundResource(R.drawable.customer_reprt_bt02);
+                    pollutionPaper.setTextColor(Color.WHITE);
+                    check = 0;
+                } else {
+                    pollutionPaper.setBackgroundResource(R.drawable.customer_rprt_bt01);
+                    pollutionPaper.setTextColor(Color.BLACK);
+                    check = 1;
+                }
+            }
+        });
+
+
+
+
+
 
 
     }
@@ -143,10 +257,8 @@ public class AddCustomerReport extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if(requestCode==2){
-            Bitmap bmp;
-
-            byte[] byteArray = data.getByteArrayExtra("image");
-            bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+            byte[] bytes = data.getByteArrayExtra("image");
+            Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
             img_sign.setImageBitmap(bmp);
 
 
