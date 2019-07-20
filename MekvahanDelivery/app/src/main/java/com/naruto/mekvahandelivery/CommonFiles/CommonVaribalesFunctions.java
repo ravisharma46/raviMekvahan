@@ -11,6 +11,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.util.Log;
+import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -190,6 +191,21 @@ public class CommonVaribalesFunctions {
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
         View dialogView = inflater.inflate(R.layout.dialog_pickup_confirmed, null);
+
+        // Specify alert dialog is not cancelable/not ignorable
+        builder.setCancelable(true);
+
+        // Set the custom layout as alert dialog view
+        builder.setView(dialogView);
+        final AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    public static void dropConfirm(Context context){
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
+        View dialogView = inflater.inflate(R.layout.dialog_drop_off_confirmed, null);
 
         // Specify alert dialog is not cancelable/not ignorable
         builder.setCancelable(true);
