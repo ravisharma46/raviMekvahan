@@ -37,6 +37,7 @@
             android:textSize="16sp"
             android:background="@drawable/qrcode_button"
             android:text="Scan QR code"
+            android:id="@+id/btscan"
             android:textAllCaps="false"
             android:textColor="@color/white" />
     </LinearLayout>
