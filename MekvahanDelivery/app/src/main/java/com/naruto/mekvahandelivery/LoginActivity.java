@@ -27,7 +27,7 @@ import com.naruto.mekvahandelivery.FeedbackPage.Feedback_page;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
+import static com.naruto.mekvahandelivery.CommonFiles.CommonVaribalesFunctions.sendEmailIntent;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
         tvfeedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this, Feedback_page.class));
+                sendEmailIntent(LoginActivity.this);
             }
         });
 
