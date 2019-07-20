@@ -77,7 +77,7 @@ public class CommonVaribalesFunctions {
 
         String email_id = "support@mekpark.com";
 
-        String email_subject = "Feedback for mekPark App";
+        String email_subject = "Feedback for Mekvahan";
 
 
         Intent emailIntent =  new Intent(Intent.ACTION_SENDTO,
