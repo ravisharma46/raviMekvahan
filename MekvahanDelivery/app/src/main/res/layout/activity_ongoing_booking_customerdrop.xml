@@ -545,7 +545,7 @@
                 android:background="@drawable/frame_rect_02">
 
                 <Button
-                    android:id="@+id/pay"
+                    android:id="@+id/bt_drop"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_margin="16dp"
