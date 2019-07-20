@@ -484,6 +484,7 @@
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="40dp"
+                            android:id="@+id/bt_rc"
                             android:layout_margin="4dp"
                             android:layout_weight="1"
                             android:background="@drawable/customer_rprt_bt01"
@@ -497,6 +498,7 @@
                             android:layout_height="40dp"
                             android:layout_margin="4dp"
                             android:layout_weight="1"
+                            android:id="@+id/bt_puc"
                             android:background="@drawable/customer_rprt_bt01"
                             android:fontFamily="@font/montserrat_medium1"
                             android:text="Puc"
@@ -507,6 +509,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="40dp"
                             android:layout_margin="4dp"
+                            android:id="@+id/bt_insurance"
                             android:layout_weight="1"
                             android:background="@drawable/customer_rprt_bt01"
                             android:fontFamily="@font/montserrat_medium1"
@@ -527,6 +530,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="40dp"
                             android:layout_margin="4dp"
+                            android:id="@+id/bt_roadtax"
                             android:layout_weight="1"
                             android:background="@drawable/customer_rprt_bt01"
                             android:fontFamily="@font/montserrat_medium1"
@@ -539,6 +543,7 @@
                             android:layout_height="40dp"
                             android:layout_margin="4dp"
                             android:layout_weight="1"
+                            android:id="@+id/bt_passengertax"
                             android:background="@drawable/customer_rprt_bt01"
                             android:fontFamily="@font/montserrat_medium1"
                             android:text="Passenger tax"
@@ -548,6 +553,7 @@
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="40dp"
+                            android:id="@+id/bt_pollutionpaper"
                             android:layout_marginLeft="4dp"
                             android:layout_marginTop="4dp"
                             android:layout_marginRight="4dp"
@@ -1032,7 +1038,7 @@
                                 android:id="@+id/image_sign"
                                 android:layout_height="80dp"
                                 android:layout_gravity="center"
-                                android:background="@drawable/image_svg" />
+                                android:src="@drawable/image_svg" />
 
                         </FrameLayout>
 
