@@ -68,7 +68,7 @@ public class OnGoingBookingVendorDrop extends AppCompatActivity {
         final ImagePopup imagePopup = new ImagePopup(this);
         imagePopup.setWindowHeight(800); // Optional
         imagePopup.setWindowWidth(800); // Optional
-       imagePopup.setBackgroundColor(Color.BLACK);
+       imagePopup.setBackgroundColor(getResources().getColor(R.color.offwhite_01));
         imagePopup.setFullScreen(true); // Optional
         imagePopup.setHideCloseIcon(true);  // Optional
         imagePopup.setImageOnClickClose(true);  // Optional
