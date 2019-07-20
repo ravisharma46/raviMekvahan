@@ -74,13 +74,14 @@ public class SignatureActivity extends AppCompatActivity {
                 Bitmap signatureBitmap = mSignaturePad.getSignatureBitmap();
 
 
-                Log.e("TAG","signClik");
-                ByteArrayOutputStream bStream = new ByteArrayOutputStream();
-                signatureBitmap.compress(Bitmap.CompressFormat.PNG, 100, bStream);
-                byte[] byteArray = bStream.toByteArray();
+               ;
 
                 Intent intent= new Intent();
-                intent.putExtra("image", byteArray);
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                signatureBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                byte[] bytes = stream.toByteArray();
+                intent.putExtra("image", bytes);
+                setResult(2,intent);
                 finish();
 
 
