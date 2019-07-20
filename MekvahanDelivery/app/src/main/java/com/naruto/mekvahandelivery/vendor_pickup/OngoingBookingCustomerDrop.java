@@ -14,18 +14,20 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.naruto.mekvahandelivery.R;
+import static com.naruto.mekvahandelivery.CommonFiles.CommonVaribalesFunctions.dropConfirm;
 import com.naruto.mekvahandelivery.customer_report.AddCustomerReport;
 import com.naruto.mekvahandelivery.customer_report.ViewCustomerReport;
 
 public class OngoingBookingCustomerDrop extends AppCompatActivity {
 
-    private Button btadd_report;
+    private Button btadd_report,bt_drop;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ongoing_booking_customerdrop);
 
         btadd_report= findViewById(R.id.bt_addReport);
+        bt_drop=findViewById(R.id.bt_drop);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffffff")));
@@ -38,6 +40,13 @@ public class OngoingBookingCustomerDrop extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(OngoingBookingCustomerDrop.this, ViewCustomerReport.class));
+            }
+        });
+
+        bt_drop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dropConfirm(OngoingBookingCustomerDrop.this);
             }
         });
 
