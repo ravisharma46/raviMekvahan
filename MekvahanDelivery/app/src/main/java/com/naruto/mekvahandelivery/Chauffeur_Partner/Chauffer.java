@@ -15,7 +15,9 @@ import android.text.Html;
 import android.view.MenuItem;
 
 import com.google.android.material.tabs.TabLayout;
-import com.naruto.mekvahandelivery.Chauffeur_Partner.NewBooking.NewBookingFragment;
+import com.naruto.mekvahandelivery.Chauffeur_Partner.NewBooking.NewBookingFragmentChauffer;
+import com.naruto.mekvahandelivery.Chauffeur_Partner.OngoingBooking.OngoingBookingFragmentChauffer;
+import com.naruto.mekvahandelivery.Chauffeur_Partner.UpcomingBooking.UpcomingBookingFragmentChauffer;
 import com.naruto.mekvahandelivery.NavActivity;
 import com.naruto.mekvahandelivery.OngoingOrders.OngoingFragment;
 import com.naruto.mekvahandelivery.R;
@@ -58,9 +60,9 @@ public class Chauffer extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         NavActivity.ViewPagerAdapter adapter = new NavActivity.ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new NewBookingFragment(), "New");
-        adapter.addFragment(new UpcomingFragment(), "Upcoming");
-        adapter.addFragment(new OngoingFragment(), "Ongoing");
+        adapter.addFragment(new NewBookingFragmentChauffer(), "New");
+        adapter.addFragment(new UpcomingBookingFragmentChauffer(), "Upcoming");
+        adapter.addFragment(new OngoingBookingFragmentChauffer(), "Ongoing");
         adapter.addFragment(new BookingHistoryFragment(), "History");
         viewPager.setAdapter(adapter);
     }
