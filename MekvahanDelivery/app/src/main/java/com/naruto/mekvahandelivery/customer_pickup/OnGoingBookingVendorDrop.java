@@ -36,13 +36,16 @@ import com.journeyapps.barcodescanner.BarcodeEncoder;
 import com.naruto.mekvahandelivery.R;
 import com.naruto.mekvahandelivery.customer_report.AddCustomerReport;
 import com.naruto.mekvahandelivery.customer_report.ViewCustomerReport;
+import com.naruto.mekvahandelivery.vendor_pickup.UpcomingBookingVendor;
+
 import static com.naruto.mekvahandelivery.CommonFiles.CommonVaribalesFunctions.dropConfirm;
+import static com.naruto.mekvahandelivery.CommonFiles.CommonVaribalesFunctions.sendNavigateIntent;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class OnGoingBookingVendorDrop extends AppCompatActivity {
-    private LinearLayout paint_linear;
+    private LinearLayout paint_linear,navigation;
     private TextView tvDetails, date, time;
     private ImageView call,iv_qrcode;
     private Button report_show,drop;
@@ -61,6 +64,7 @@ public class OnGoingBookingVendorDrop extends AppCompatActivity {
         call = findViewById(R.id.call);
         iv_qrcode=findViewById(R.id.iv_qrcode);
         drop=findViewById(R.id.bt_drop);
+        navigation=findViewById(R.id.ll_navigation);
 
        generateQrcode();
 
@@ -92,6 +96,12 @@ public class OnGoingBookingVendorDrop extends AppCompatActivity {
 
 
 
+        navigation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendNavigateIntent(OnGoingBookingVendorDrop.this,28.717010,77.102364);
+            }
+        });
 
 
 
