@@ -37,8 +37,7 @@
         <activity android:name=".Chauffeur_Partner.Chauffer" />
         <activity android:name=".customer_report.ViewCustomerReport" />
         <activity android:name=".ScanQrcode"
-            android:screenOrientation="fullSensor"
-            tools:replace="screenOrientation"
+            android:screenOrientation="portrait"
             />
         <activity android:name=".UserProfile" />
         <activity
