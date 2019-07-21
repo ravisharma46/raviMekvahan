@@ -103,7 +103,10 @@
                         android:layout_height="match_parent"
                         android:fontFamily="@font/montserrat_medium1"
                         android:gravity="center"
-                        android:padding="16dp"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:paddingLeft="24dp"
+                        android:paddingRight="28dp"
                         android:text="Available to accept booking"
                         android:textColor="@color/white"
                         android:textSize="14sp" />
@@ -112,18 +115,17 @@
 
 
                 <FrameLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <Switch
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:layout_marginStart="32dp"
-                        android:layout_marginTop="12dp"
-                        android:padding="8dp"
-                        android:switchMinWidth="44dp"
-                        android:thumbTint="@color/green" />
+                        android:layout_gravity="center"
+                        android:enabled="true"
+                        android:theme="@style/SwitchCompatTheme"
+                        android:switchMinWidth="48dp"
+                         />
 
 
                 </FrameLayout>
