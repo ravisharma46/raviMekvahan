@@ -18,10 +18,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.naruto.mekvahandelivery.R;
 import com.naruto.mekvahandelivery.ScanQrcode;
 import com.naruto.mekvahandelivery.customer_report.AddCustomerReport;
+import static com.naruto.mekvahandelivery.CommonFiles.CommonVaribalesFunctions.sendNavigateIntent;
 
 public class UpcomingBookingVendor extends AppCompatActivity {
 
-    private LinearLayout paint_linear;
+    private LinearLayout paint_linear,navigation;
     private Button report,pickup_confirm;
     private TextView tvDetails;
 
@@ -34,6 +35,7 @@ public class UpcomingBookingVendor extends AppCompatActivity {
         tvDetails=findViewById(R.id.tvDetails);
         paint_linear = findViewById(R.id.linear_paint);
         pickup_confirm=findViewById(R.id.btpickup);
+        navigation=findViewById(R.id.ll_navigation);
 
 
         try{
@@ -72,6 +74,14 @@ public class UpcomingBookingVendor extends AppCompatActivity {
                 }
 
 
+            }
+        });
+
+
+        navigation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendNavigateIntent(UpcomingBookingVendor.this,28.717010,77.102364);
             }
         });
 
