@@ -22,10 +22,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.naruto.mekvahandelivery.R;
 import static com.naruto.mekvahandelivery.CommonFiles.CommonVaribalesFunctions.pickupConfirm;
+import static com.naruto.mekvahandelivery.CommonFiles.CommonVaribalesFunctions.sendNavigateIntent;
+
 import com.naruto.mekvahandelivery.customer_report.AddCustomerReport;
 
 public class UpcomingBookingCustomer extends AppCompatActivity {
-    private LinearLayout paint_linear;
+    private LinearLayout paint_linear,navigation;
     private TextView tvDetails;
     private Button report,confirm_booking;
     private ImageView call;
@@ -41,6 +43,7 @@ public class UpcomingBookingCustomer extends AppCompatActivity {
         report = findViewById(R.id.tvcustomer_report);
         call = findViewById(R.id.call);
         confirm_booking=findViewById(R.id.bt_confirm);
+        navigation=findViewById(R.id.ll_navigation);
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -74,6 +77,13 @@ public class UpcomingBookingCustomer extends AppCompatActivity {
                 Intent callIntent = new Intent(Intent.ACTION_DIAL);
                 callIntent.setData(Uri.parse("tel:123456789"));
                 startActivity(callIntent);
+            }
+        });
+
+        navigation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendNavigateIntent(UpcomingBookingCustomer.this,28.717010,77.102364);
             }
         });
 
