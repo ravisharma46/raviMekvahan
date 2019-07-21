@@ -49,17 +49,7 @@ public class NewBookingAdapter extends RecyclerView.Adapter<NewBookingAdapter.Vi
         viewHolder.textViewstatus.setText(data.getDescription());
 
 
-//        viewHolder.textViewname.setText(listitem.getName());
-//        viewHolder.textViewrent.setText(listitem.getRent_from());
-//        viewHolder.textViewdeposite.setText(listitem.getSecurity_deposit_from());
-//        viewHolder.textViewaccomd.setText(listitem.getAccomodation_allowed_str());
-//        viewHolder.textViewbed.setText(listitem.getAvailable_bed_count()+" Beds");
-//
-//        String state_city= listitem.getCity()+","+listitem.getState();
-//        viewHolder.textViewcity.setText(state_city);
 
-
-        //viewHolder.textViewRupee.setText("\u20B9" + " 99");
 
         String status=data.getDescription();
 
