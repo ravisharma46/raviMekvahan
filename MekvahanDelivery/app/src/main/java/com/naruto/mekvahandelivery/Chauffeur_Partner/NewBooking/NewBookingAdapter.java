@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.naruto.mekvahandelivery.OngoingOrders.MyListDataOngoingBooking;
@@ -56,7 +57,7 @@ public class NewBookingAdapter extends RecyclerView.Adapter<NewBookingAdapter.Vi
 
 
 
-            viewHolder.textVieworderid.setOnClickListener(new View.OnClickListener() {
+            viewHolder.cv_details.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent i = new Intent(view.getContext(), NewBookingOrderView.class);
@@ -83,15 +84,17 @@ public class NewBookingAdapter extends RecyclerView.Adapter<NewBookingAdapter.Vi
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView textVieworderid, textViewstatus, textViewstate, textViewrent, textViewdeposite, textViewaccomd, textViewbed;
-        public ImageView imageView;
-        public LinearLayout linearLayout;
+        private TextView textVieworderid, textViewstatus, textViewstate, textViewrent, textViewdeposite, textViewaccomd, textViewbed;
+        private CardView cv_details;
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             textVieworderid = itemView.findViewById(R.id.order_id_2);
             textViewstatus= itemView.findViewById(R.id.status);
+            cv_details=itemView.findViewById(R.id.cv_details);
+
 
 //            textViewcity= (TextView) itemView.findViewById(R.id.city_tv);
 //            textViewrent= (TextView) itemView.findViewById(R.id.rent_tv);
