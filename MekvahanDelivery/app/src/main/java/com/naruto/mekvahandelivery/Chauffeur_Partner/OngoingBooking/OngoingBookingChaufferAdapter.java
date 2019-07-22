@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 
@@ -61,7 +62,7 @@ public class OngoingBookingChaufferAdapter extends RecyclerView.Adapter<OngoingB
 
 
 
-        viewHolder.textVieworderid.setOnClickListener(new View.OnClickListener() {
+        viewHolder.cv_details.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(view.getContext(), OngoingBookingCustomerDrop.class);
@@ -88,15 +89,16 @@ public class OngoingBookingChaufferAdapter extends RecyclerView.Adapter<OngoingB
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView textVieworderid, textViewstatus, textViewstate, textViewrent, textViewdeposite, textViewaccomd, textViewbed;
-        public ImageView imageView;
-        public LinearLayout linearLayout;
+        private TextView textVieworderid, textViewstatus, textViewstate, textViewrent, textViewdeposite, textViewaccomd, textViewbed;
+        private CardView cv_details;
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             textVieworderid = itemView.findViewById(R.id.order_id_1);
             textViewstatus= itemView.findViewById(R.id.status_U);
+            cv_details=itemView.findViewById(R.id.cv_details);
 
         }
     } 
