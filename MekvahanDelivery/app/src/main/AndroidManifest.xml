@@ -18,27 +18,28 @@
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:hardwareAccelerated="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-
-        <activity android:name=".CaptureActivityPortrait"
+        <activity android:name=".user_profile.Checklist"
             android:theme="@style/Theme.Design.Light.NoActionBar"
-            />
-
+            ></activity>
+        <activity
+            android:name=".CaptureActivityPortrait"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity android:name=".FeedbackPage.Feedback_page" />
         <activity android:name=".AboutUs.AboutUs" />
         <activity android:name=".Chauffeur_Partner.NewBooking.NewBookingOrderView" />
         <activity android:name=".Chauffeur_Partner.Chauffer" />
         <activity android:name=".customer_report.ViewCustomerReport" />
-        <activity android:name=".ScanQrcode"
-            android:screenOrientation="portrait"
-            />
+        <activity
+            android:name=".ScanQrcode"
+            android:screenOrientation="portrait" />
         <activity android:name=".UserProfile" />
         <activity
             android:name=".user_profile.ShowAccountDetails"
