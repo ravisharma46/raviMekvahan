@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.naruto.mekvahandelivery.OngoingOrders.MyListDataOngoingBooking;
@@ -53,7 +54,7 @@ public class UpcomingAdapter extends RecyclerView.Adapter<UpcomingAdapter.ViewHo
 
 
         if(status.contains("Awaiting customer pickup")){
-            viewHolder.tvorder_id.setOnClickListener(new View.OnClickListener() {
+            viewHolder.cv_details.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Log.e("TAG","click");
@@ -63,7 +64,7 @@ public class UpcomingAdapter extends RecyclerView.Adapter<UpcomingAdapter.ViewHo
             });
         }
         if(status.contains("Awaiting vendor pickup")){
-            viewHolder.tvorder_id.setOnClickListener(new View.OnClickListener() {
+            viewHolder.cv_details.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Log.e("TAG","click");
@@ -92,13 +93,12 @@ public class UpcomingAdapter extends RecyclerView.Adapter<UpcomingAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView tvorder_id, textstatus, textViewstate, textViewrent, textViewdeposite, textViewaccomd, textViewbed;
-        public ImageView imageView;
-        public LinearLayout linearLayout;
+        private CardView cv_details;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-              tvorder_id =  (TextView) itemView.findViewById(R.id.order_id_1);
+              cv_details =  itemView.findViewById(R.id.cv_details);
               textstatus=(TextView) itemView.findViewById(R.id.status_U);
 //            textViewcity= (TextView) itemView.findViewById(R.id.city_tv);
 //            textViewrent= (TextView) itemView.findViewById(R.id.rent_tv);
