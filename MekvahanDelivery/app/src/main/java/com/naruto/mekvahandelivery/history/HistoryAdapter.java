@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.naruto.mekvahandelivery.R;
@@ -48,7 +49,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
         holder.carlogo.setImageResource(cardata.getCarlogo());
         holder.reasonimg.setImageResource(cardata.getReasonImg());
 
-        holder.booking.setOnClickListener(new View.OnClickListener() {
+        holder.cv_details.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(view.getContext(), Service_Completed.class);
@@ -69,11 +70,12 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public View view;
-        public TextView carName, numberPlate, reason, progress,booking;
-        public ImageView carlogo, reasonimg;
+        private View view;
+        private TextView carName, numberPlate, reason, progress,booking;
+        private ImageView carlogo, reasonimg;
+        private CardView cv_details;
 
-        public ViewHolder(View view) {
+        private ViewHolder(View view) {
             super(view);
             this.view = view;
             carName = view.findViewById(R.id.car_name);
@@ -83,6 +85,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
             progress = view.findViewById(R.id.progress);
             carlogo = view.findViewById(R.id.logo);
             reasonimg = view.findViewById(R.id.reasonImg);
+            cv_details=view.findViewById(R.id.cv_details);
         }
     }
 }
