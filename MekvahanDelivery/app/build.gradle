@@ -53,6 +53,3 @@ dependencies {
     implementation 'com.github.chathuralakmal:AndroidImagePopup:1.2.1'
     implementation 'com.github.swapnil1104:OtpEditText:0.0.1'
 }
-
-
-
