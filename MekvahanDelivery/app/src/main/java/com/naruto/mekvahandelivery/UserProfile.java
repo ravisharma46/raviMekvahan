@@ -37,6 +37,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.naruto.mekvahandelivery.CommonFiles.LoginSessionManager;
+import com.naruto.mekvahandelivery.user_profile.Checklist;
 import com.naruto.mekvahandelivery.user_profile.ShowAccountDetails;
 
 import org.json.JSONException;
@@ -63,7 +64,7 @@ import static com.naruto.mekvahandelivery.CommonFiles.LoginSessionManager.TYPE;
 public class UserProfile extends AppCompatActivity {
 
     private static final int GALLARY_REQUEST = 1;
-    private Button change_passWord, bt_done;
+    private Button change_passWord, bt_done,bt_checklist;
     private FrameLayout account_details;
     private TextView name, mobile, email, address, partnerType, executive_id, name_1, update_pic;
     //private static final String myUrl="https://mekvahan.com/api/user/delivery/completeDelivery";
@@ -92,6 +93,7 @@ public class UserProfile extends AppCompatActivity {
         partnerType = findViewById(R.id.tvpartner);
         executive_id = findViewById(R.id.tvprofileid);
         update_pic = findViewById(R.id.tvupdatepic);
+        bt_checklist=findViewById(R.id.bt_checklist);
 
 
 
@@ -140,6 +142,13 @@ public class UserProfile extends AppCompatActivity {
             gallaryIntent.putExtra("flag", 1);
 
             startActivityForResult(gallaryIntent, GALLARY_REQUEST);
+        });
+
+        bt_checklist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(UserProfile.this, Checklist.class));
+            }
         });
 
 
